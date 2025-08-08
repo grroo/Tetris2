@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0e">
+  <title>TETRA | Modern Mobile Tetris</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="game">
+      <div class="header">
+        <div class="title">TETRA</div>
+        <div class="badge">Level <span id="level">1</span></div>
+      </div>
+      <div class="sidebar">
+        <div class="panel hud">
+          <div class="box">
+            <div class="value" id="score">0</div>
+            <div class="label">Score</div>
+          </div>
+          <div class="box">
+            <div class="value" id="lines">0</div>
+            <div class="label">Lines</div>
+          </div>
+        </div>
+        <div class="panel next">
+          <canvas id="next" width="140" height="140"></canvas>
+        </div>
+        <div class="panel" style="padding:12px">
+          <div class="label" style="margin-bottom:6px">Controls</div>
+          <div class="btn-row left-right">
+            <div class="btn small" id="btn-left">Left</div>
+            <div class="btn small" id="btn-right">Right</div>
+          </div>
+          <div class="btn-row" style="margin-top:8px">
+            <div class="btn small" id="btn-rotate">Rotate</div>
+            <div class="btn small" id="btn-drop">Drop</div>
+            <div class="btn small" id="btn-down">Down</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel playfield">
+        <canvas id="game" width="360" height="720"></canvas>
+        <div class="toast" id="toast">Level Up</div>
+      </div>
+      <div class="controls">
+        <div class="btn" id="start">Start</div>
+        <div class="btn pulse" id="pause">Pause</div>
+        <div class="btn" id="restart">Restart</div>
+      </div>
+      <div class="footer">
+        Tip: swipe left or right to move, tap upper half to rotate, hold lower half to soft drop, tap Drop to hard drop.
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));}</script>
+</body>
+</html>
